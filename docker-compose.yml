@@ -4,7 +4,7 @@ services:
   # React frontend service
   frontend:
     build:
-      context: ./frontend # Path to the React app directory
+      context: ./WebApp # Path to the React app directory
       dockerfile: Dockerfile
     ports:
       - "3000:80" # Exposes port 80 in the container to port 3000 on your machine
