@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  # React frontend service
+  frontend:
+    build:
+      context: ./frontend # Path to the React app directory
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80" # Exposes port 80 in the container to port 3000 on your machine
+    networks:
+      - app-network
+
+  # .NET Web API backend service
+  backend:
+    build:
+      context: ./Backend # Path to the .NET app directory
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=InMemory
+    ports:
+      - "5075:80" # Exposes port 80 in the container to port 5000 on your machine
+    networks:
+      - app-network
+
+# Define the network for communication between the frontend and backend services
+networks:
+  app-network:
+    driver: bridge
