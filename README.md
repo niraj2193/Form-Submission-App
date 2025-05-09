@@ -47,8 +47,19 @@ To test the API endpoints interactively, you can use Swagger.
 - Open http://localhost:5075/swagger/index.html in your browser.
 - You’ll find a list of available endpoints that you can test with sample data.
 
+## Clone the Repository
 
+git clone https://github.com/niraj2193/Form-Submission-App.git
 
+## Install dependencies for WebApp
+
+- `npm install`
+
+## Running WebApp Application
+
+In the project directory, you can run:
+
+- `npm start`
 
 ### Docker
 ## Usage
