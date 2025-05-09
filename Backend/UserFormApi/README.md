@@ -12,18 +12,19 @@ This is the .NET 9 Web API backend for the User Form Application. It provides en
 ## Folder Structure
 
 UserFormApi/
-├── Controllers/      # Contains all controller classes (e.g., UserInfoController.cs)
-├── Models/           # Contains model classes (e.g., UserInfo.cs)
-├── Common_Data/      # Contains database context (ApplicationDbContext.cs)
-├── Program.cs		  # Startup configuration (program setup) 	
-└── appsettings.json  # Application settings (database connections, etc.)
+├── Controllers/ # Contains all controller classes (e.g., UserInfoController.cs)
+├── Models/ # Contains model classes (e.g., UserInfo.cs)
+├── Common_Data/ # Contains database context (ApplicationDbContext.cs)
+├── Program.cs # Startup configuration (program setup)
+└── appsettings.json # Application settings (database connections, etc.)
 
 ## Prerequisites
+
 Before you begin, ensure you have the following installed:
 
 - .NET SDK (version 9.0)
--  Node.js (for React frontend)
--  PostgreSQL (if using PostgreSQL, or .NET in-memory DB can be used for testing)
+- Node.js (for React frontend)
+- PostgreSQL (if using PostgreSQL, or .NET in-memory DB can be used for testing)
 
 ## Swagger
 
@@ -34,19 +35,17 @@ To test the API endpoints interactively, you can use Swagger.
 
 ## Clone the Repository
 
-git clone https://github.com/yourusername/UserFormApi.git
+git clone https://github.com/niraj2193/Form-Submission-App.git
 cd UserFormApi
-
 
 ## Contributing
 
 Please follow these steps:
-Step 1) Fork this repository.
-Step 2) Create a new branch (git checkout -b feature-branch).
-Step 3) Commit your changes (git commit -am 'Add new feature').
-Step 4) Push to the branch (git push origin feature-branch).
-Step 5) Open a pull request.
-
+Step 1 Fork this repository.
+Step 2 Create a new branch (git checkout -b feature-branch).
+Step 3 Commit your changes (git commit -am 'Add new feature').
+Step 4 Push to the branch (git push origin feature-branch).
+Step 5 Open a pull request.
 
 ## License
 

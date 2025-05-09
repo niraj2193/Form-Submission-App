@@ -59,6 +59,10 @@ Create a .env file in the root of the project (if it doesn't already exist) and 
 
 - npm test
 
+## Clone the Repository
+
+git clone https://github.com/niraj2193/Form-Submission-App.git
+
 ## Contributing
 
 Step 1 - Fork the repository.
