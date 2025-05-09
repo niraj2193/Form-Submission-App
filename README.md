@@ -1,51 +1,3 @@
-## 🐳 Docker Compose Setup
-
-This project uses Docker Compose to run the React frontend and .NET Web API backend in separate containers with an isolated network for inter-service communication.
-
-### Docker Compose Version
-
-```yaml
-version: "3.8"
-
-### Services
-Frontend (React)
-Build Context: ./WebApp
-
-Dockerfile: WebApp/Dockerfile
-
-Ports: Maps container port 80 to host port 3000
-
-Network: app-network
-
-Backend (.NET Web API)
-Build Context: ./Backend
-
-Dockerfile: Backend/Dockerfile
-
-Environment Variables:
-
-ASPNETCORE_ENVIRONMENT=Development
-
-ConnectionStrings__DefaultConnection=InMemory
-
-Ports: Maps container port 80 to host port 5075
-
-Network: app-network
-
-## Network
-A custom bridge network named app-network is used to allow communication between the frontend and backend services.
-networks:
-  app-network:
-    driver: bridge
-
-## Usage
-To build and run the containers:
-docker-compose up --build
-
-To stop the services:
-docker-compose down
-
-
 # Form-Submission-App
 
 This is the .NET 9 Web API backend and React Frontend for the User Form Application. It provides endpoints for submitting and retrieving user data and stores it in an in-memory database or PostgreSQL database depending on your configuration.
@@ -59,3 +11,51 @@ This is the .NET 9 Web API backend and React Frontend for the User Form Applicat
 - React (v18+)
 - Material UI (MUI v5)
 - Environment-based `fetch()` for API requests
+
+## Folder Structure
+
+frontend/
+├── public/ # Public files (index.html, favicon, etc.)
+├── src/  
+│ ├── components/ # Reusable UI components
+│ ├── services/ # API calls and functions
+│ ├── App.js # Main app component
+│ └── index.js # Entry point of the React app
+├── .env # Environment variables
+└── package.json # Project dependencies and scripts
+
+UserFormApi/
+├── Controllers/      # Contains all controller classes (e.g., UserInfoController.cs)
+├── Models/           # Contains model classes (e.g., UserInfo.cs)
+├── Common_Data/      # Contains database context (ApplicationDbContext.cs)
+├── Program.cs		  # Startup configuration (program setup) 	
+└── appsettings.json  # Application settings (database connections, etc.)
+
+## Prerequisites
+Before you begin, ensure you have the following installed:
+
+- .NET SDK (version 9.0)
+-  Node.js (for React frontend)
+-  PostgreSQL (if using PostgreSQL, or .NET in-memory DB can be used for testing)
+-  npm (comes with Node.js)
+-  React (already bundled in this project)
+
+## Swagger
+
+To test the API endpoints interactively, you can use Swagger.
+
+- Open http://localhost:5075/swagger/index.html in your browser.
+- You’ll find a list of available endpoints that you can test with sample data.
+
+
+
+
+### Docker
+## Usage
+To build and run the containers:
+docker-compose up --build
+
+To stop the services:
+docker-compose down
+
+
